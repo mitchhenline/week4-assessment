@@ -19,4 +19,13 @@ module.exports = {
         res.status(200).send(randomFortune);
     },
 
+    getTravel: (req, res) => {
+        const destinations = ["Puerto Rico", "Alaska", "South Africa", "Australia", "Delaware"];
+
+        let randomIndex = Math.floor(Math.random() * destinations.length);
+        let randomDestination = destinations[randomIndex];
+
+        res.status(200).send(randomDestination);
+    },
+
 }

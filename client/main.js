@@ -1,5 +1,6 @@
 const complimentBtn = document.getElementById("complimentButton")
 const fortuneBtn = document.getElementById("fortune-button")
+const travelBtn = document.getElementById("travel-spot")
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -17,5 +18,14 @@ const getFortune = () => {
     });
 };
 
+const getTravel = () => {
+    axios.get("http://localhost:4000/api/travel/")
+        .then(res => {
+            const data = res.data;
+            alert(data);
+    });
+};
+
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
+travelBtn.addEventListener('click', getTravel)
