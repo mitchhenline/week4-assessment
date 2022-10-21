@@ -28,4 +28,53 @@ module.exports = {
         res.status(200).send(randomDestination);
     },
 
+    getPlanet: (req, res) => {
+        res.status(200).send(planets)
+    },
+
+    deletePlanet: (req, res) => {
+        const deleteId = req.params.id
+        let index = planets.findIndex(element => element.id === +deleteId)
+        planets.splice(index, 1)
+        res.status(200).send(planets)
+    },
+
+    createPlanet: (req, res) => {
+        const {title, rating, imageURL} = req.body
+ 
+        let greatestId = -1
+        for (let i = 0; i < planets.length; i++) {
+            if (planets[i].id > greatestId) {
+                greatestId = planets[i].id
+            }
+        }
+        let nextId = greatestId + 1
+        
+        let newPlanet = {
+            id: nextId,
+            title: title,
+            rating: rating,
+            imageURL: imageURL
+
+        }
+
+        planets.push(newPlanet)
+        res.status(200).send(planets)
+    },
+    updatePlanet: (req, res) => {
+        let type = req.body.type
+        let id = req.params.id
+
+        let index = planets.findIndex(element => element.id === +id)
+
+        if (type === 'plus') {
+            planets[index].rating++
+            res.status(200).send(planets)
+        } else if (type === 'minus'){
+            planets[index].rating--
+            res.status(200).send(planets)
+        } else {
+            res.sendStatus(400)
+        }
+    }
 }

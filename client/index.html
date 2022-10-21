@@ -4,13 +4,70 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
-    <h3>FEELING DOWN? CLICK FOR A PICK ME UP</h3>
+    <h3>FEELING DOWN? CLICK FOR A PICK-ME-UP</h3>
     <button id="complimentButton">Get a compliment</button>
     <h3>VIRTUAL FORTUNE COOKIE</h3>
     <button id="fortune-button">Get your fortune</button>
     <h3>GLOBAL TRAVEL</h3>
     <button id="travel-spot">Click to Travel</button>
-    <h3>SPACE TRAVEL</h3>
+
+    <h3>BUILD YOUR OWN PLANET</h3>
+    <form>
+      <input 
+          type='text'
+          id="title"
+          placeholder="Planet name?"/>
+      <input 
+          type='text'
+          id="img"
+          placeholder='Paste an image URL'/>
+      <section id="size-container">
+          <p>What type of planet is it:</p>
+          <div id="radio-container">
+              <label for="gas">
+                  <input
+                      type="radio"
+                      name="ratings"
+                      value="1"
+                      id="one"/>
+                  Gas Giant (Not-habitable)
+              </label>
+              <label for="ice">
+                  <input
+                      type="radio"
+                      name="ratings"
+                      value="2"
+                      id="two"/>
+                  Ice Planet (Hoth-esque)
+              </label>
+              <label for="desert">
+                  <input
+                      type="radio"
+                      name="ratings"
+                      value="3"
+                      id="three"/>
+                  Desert Planet (Like Tatooine)
+              </label>
+              <label for="green-and-lush">
+                  <input
+                      type="radio"
+                      name="ratings"
+                      value="4"
+                      id="four"/>
+                  Green and Lush (Think Naboo)
+              </label>
+              <label for="people-made">
+                  <input
+                      type="radio"
+                      name="ratings"
+                      value="5"
+                      id="five"/>
+                  People-Made (Death Star)
+              </label>
+          </div>
+      </section>
+      <button>Create Planet</button>
+  </form>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
