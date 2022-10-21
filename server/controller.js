@@ -1,3 +1,5 @@
+const planets = require('./db.json')
+
 module.exports = {
 
     getCompliment: (req, res) => {
@@ -40,7 +42,7 @@ module.exports = {
     },
 
     createPlanet: (req, res) => {
-        const {title, rating, imageURL} = req.body
+        const {name, imageURL} = req.body
  
         let greatestId = -1
         for (let i = 0; i < planets.length; i++) {
@@ -52,8 +54,7 @@ module.exports = {
         
         let newPlanet = {
             id: nextId,
-            title: title,
-            rating: rating,
+            name: name,
             imageURL: imageURL
 
         }
@@ -61,20 +62,4 @@ module.exports = {
         planets.push(newPlanet)
         res.status(200).send(planets)
     },
-    updatePlanet: (req, res) => {
-        let type = req.body.type
-        let id = req.params.id
-
-        let index = planets.findIndex(element => element.id === +id)
-
-        if (type === 'plus') {
-            planets[index].rating++
-            res.status(200).send(planets)
-        } else if (type === 'minus'){
-            planets[index].rating--
-            res.status(200).send(planets)
-        } else {
-            res.sendStatus(400)
-        }
-    }
 }

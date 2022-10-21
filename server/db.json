@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "name": "Earth",
+      "imageURL" : "https://cdn.mos.cms.futurecdn.net/yCPyoZDQBBcXikqxkeW2jJ-1200-80.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Saturn",
+      "imageURL" : "https://starwalk.space/gallery/images/saturn-planet-guide/1920x1080.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Pluto",
+      "imageURL" : "https://cdn.uanews.arizona.edu/s3fs-public/images/uanow/Pluto_UANow%20thmb.jpg"
+    }
+  ]
